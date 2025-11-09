@@ -5,7 +5,7 @@ Software Requirements Specification (SRS) document is a document i which we give
 ##  My SRS Document
 
 I Have Attached The SRS Document Which I Have Prepared In the `src` folder
-[SRS Document made by me ](https://github.com/devangdileep/amfoss-curriculum/blob/3e076d6fadfcc094531bfe9dcf296f400a48f957/Task-02/src/SRS-DOC.pdf)
+[SRS Document made by me ](https://github.com/devangdileep/amfoss-curriculum/blob/3e076d6fadfcc094531bfe9dcf296f400a48f957/Task-02/src/SRS-Document.pdf)
 
 
 
