@@ -5,7 +5,7 @@ Software Requirements Specification (SRS) document is a document i which we give
 ##  My SRS Document
 
 I Have Attached The SRS Document Which I Have Prepared In the `src` folder
-[SRS Document made by me ](Task-02/src/SRS-DOC.pdf)
+[SRS Document made by me ](/src/SRS-DOC.pdf)
 
 
 
