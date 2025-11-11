@@ -5,10 +5,10 @@ Wireframes are low-fidelity layouts that define the structure, navigation flow, 
 ##  My SRS Document
 
 I Have Attached The Melofi Mobile Wireframe Which I Have Prepared In the `src` folder [
-[MeloFi Mobile Wireframe ](https://github.com/devangdileep/amfoss-curriculum/blob/50aa82982a6bfa49ff6f5189653caaafb3555027/Task-03/src/Melofi%20Mobile%20App%20Wireframe.pdf) ]
+[MeloFi Mobile Wireframe Moqups Link ](https://app.moqups.com/BsqSI9XODvG79BipjfJ8Es8OknRvdhKC/view/page/a5ec07f52) ]
 
 I Have Attached The Melofi Web Wireframe Which I Have Prepared In the `src` folder [
-[Melofi Website Wireframe ](https://github.com/devangdileep/amfoss-curriculum/blob/50aa82982a6bfa49ff6f5189653caaafb3555027/Task-03/src/Melofi%20Webiste%20Wireframe.pdf) ]
+[Melofi Website Wireframe Moqups Link](https://app.moqups.com/BsqSI9XODvG79BipjfJ8Es8OknRvdhKC/view/page/a9e7737aa) ]
 
 
 ## Outcome of this exercise
