@@ -13,6 +13,9 @@ function Playlist() {
             <PlaylistCards />
             <PlaylistCards />
             <PlaylistCards />
+            <div className="playlist-recom">
+                <h2>Recommended Playlists</h2>
+            </div>
             <PlaylistCards />
             <PlaylistCards />
             <PlaylistCards />

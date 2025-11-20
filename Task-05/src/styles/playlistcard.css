@@ -16,7 +16,7 @@
     width: 248px;
     height: 200px;
     padding: 1px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .playlist-info h2 {
@@ -52,4 +52,14 @@
 
 .playlist-create-btn button:hover {
     cursor: pointer;
+}
+
+.playlist-recom h2 {
+    display: flex;
+    font-size: 30px;
+    text-decoration: underline;
+    margin-left: 20px;
+    color: rgb(76, 130, 163);
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
