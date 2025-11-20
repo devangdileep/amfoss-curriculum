@@ -1,0 +1,43 @@
+.navbar {
+    height: 70px;
+    margin-left: 10px;
+    margin-bottom: 90px;
+    margin-right: 10px;
+    display: flex;
+    border: #6ca5c6 5px solid;
+    background-color: #72afd2;
+    border-radius: 40px;
+    margin-top: 10px;
+
+
+}
+
+.navbar-logo img {
+    height: 85px;
+    margin-left: 5px;
+}
+
+.navbar-topics {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar-topics a {
+    font-family: jetbrains-mono, monospace;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    display: inline-block;
+    text-align: center;
+    padding: 50px;
+
+}
+
+.navbar-user {
+    display: flex;
+    height: 70px;
+    width: 80px;
+    margin-left: auto;
+    align-items: left;
+}
