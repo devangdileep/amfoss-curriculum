@@ -23,16 +23,28 @@
     margin-left: auto;
 }
 
-.navbar-topics a {
+.navbar-topics button {
     font-family: monospace;
     text-decoration: none;
     color: black;
-    font-size: 25px;
+    font-size: 20px;
     display: inline-block;
     text-align: center;
-    padding: 50px;
+    margin-right: 20px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #72afd2;
 
 }
+
+.navbar-topics button:hover {
+    background-color: #6ca5c6;
+    color: black;
+    cursor: pointer;
+
+}
+
 
 .navbar-user {
     display: flex;

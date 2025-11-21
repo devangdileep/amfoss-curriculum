@@ -1,4 +1,5 @@
 import '../styles/navbar.css'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
@@ -7,9 +8,10 @@ function Navbar() {
                 <img src="src/assets/icon.png" />
             </div>
             <div className='navbar-topics'>
-                <a href="/playlist">Playlist</a>
-                <a href="/search">Search</a>
-                <a href="/profile">Profile</a>
+
+                <Link to='/playlist'><button type='button'>Playlist</button></Link>
+                <Link to='/search'><button type='button'>Search</button></Link>
+                <Link to='/profile'><button type='button'>Profile</button></Link>
             </div>
             <div className='navbar-user'>
                 <img src="src/assets/user-icon.png" />
