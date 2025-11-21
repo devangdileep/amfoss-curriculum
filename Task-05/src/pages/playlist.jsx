@@ -1,3 +1,4 @@
+import DynamicIsland from "../components/dynamicisland";
 import Navbar from "../components/navbar";
 import PlaylistCards from "../components/playlistcards";
 function Playlist() {
@@ -21,6 +22,8 @@ function Playlist() {
             <PlaylistCards />
             <PlaylistCards />
             <PlaylistCards />
+
+            <DynamicIsland />
         </>
     )
 }

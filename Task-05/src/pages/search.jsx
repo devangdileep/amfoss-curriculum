@@ -2,6 +2,7 @@ import Navbar from "../components/navbar";
 import "../styles/search.css";
 import FetchArtist from "../components/fetchartist";
 import SearchMusic from "../components/searchmusic";
+import DynamicIsland from "../components/dynamicisland";
 
 function Search() {
     return (
@@ -28,6 +29,7 @@ function Search() {
 
                 </div>
             </div>
+            <DynamicIsland />
         </>
     );
 }
