@@ -1,16 +1,49 @@
-# React + Vite
+# Melofi Web Frontend Using React JS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web frontend of a music streaming application using React JS 
 
-Currently, two official plugins are available:
+## How to Run the Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+git clone [this repo link]
 
-## React Compiler
+cd [to the reppo]
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+npm install => downloads all the required pakages to run 
 
-## Expanding the ESLint configuration
+npm run dev => it will be hosted in localhost and then view the website
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+
+## Requirements
+
+```
+1. Node and npm should be installed in your pc
+2. Install all the required pakages
+```
+# Pages 
+
+`localhost:[port]/` => login page
+
+`localhost:[port]/register` => register page
+
+`localhost:[port]/playlist` => playlist page
+
+`localhost:[port]/search` => search page
+
+`localhost:[port]/profile` => profile page
+
+# Things i Learned while doing this project
+
+
+```
+1. Learned Html, CSS and JS to start with react initially
+
+2. Learned about react and how does component works 
+
+3. Learned how we can reuse the react component
+
+4. Learned difference between anchor tags and Link tags 
+
+5. Learned to do routing using react-router-dom
+```
