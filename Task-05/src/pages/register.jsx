@@ -13,7 +13,9 @@ function Login() {
                 <input type="text" placeholder="Username" required />
                 <input type="text" placeholder="Email" required />
                 <input type="password" placeholder="Password" required />
-                <button type="submit">Login</button>
+                <Link to='/playlist'>
+                    <button type="submit">Login</button>
+                </Link>
             </form>
             <div className="login-signup">
                 <button>

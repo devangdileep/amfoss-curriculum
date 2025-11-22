@@ -7,6 +7,7 @@ import Login from './pages/login.jsx'
 import Register from './pages/register.jsx'
 import Search from './pages/search.jsx'
 import Profile from './pages/profile.jsx'
+import PlayingMusic from './pages/playing.jsx'
 
 const router = createBrowserRouter([
   { path: '/', element: <Login /> },
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   { path: '/register', element: <Register /> },
   { path: '/search', element: <Search /> },
   { path: '/profile', element: <Profile /> },
+  { path: '/playing', element: <PlayingMusic /> },
 ])
 
 createRoot(document.getElementById('root')).render(
