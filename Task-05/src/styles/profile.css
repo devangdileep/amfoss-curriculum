@@ -48,10 +48,11 @@
 }
 
 .divider {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 40px;
     width: 100%;
     max-width: 800px;
 }

@@ -38,7 +38,6 @@
     border: none;
     background-color: #72afd2;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .navbar-topics button:hover {
@@ -53,7 +52,6 @@
 .navbar-user img {
     height: 50px;
     width: 50px;
-    object-fit: cover;
 }
 
 @media (max-width: 768px) {
