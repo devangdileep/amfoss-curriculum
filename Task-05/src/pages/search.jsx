@@ -13,6 +13,7 @@ function Search() {
                     <input type="text" placeholder="Search..." />
                 </div>
             </div>
+            <h2>Artist</h2>
             <div className="fetch-artist">
                 <FetchArtist />
                 <FetchArtist />

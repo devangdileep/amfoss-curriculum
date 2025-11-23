@@ -1,23 +1,32 @@
+.profile-page {
+    padding-bottom: 100px;
+}
+
 .profile-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    padding: 20px;
 }
 
 .profile-info img {
-    width: 400px;
-
+    width: clamp(150px, 40vw, 200px);
+    height: clamp(150px, 40vw, 200px);
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .profile-info h2 {
     color: #57839d;
-    font-size: 40px;
+    font-size: clamp(24px, 6vw, 40px);
+    margin: 15px 0 5px;
+    text-align: center;
 }
 
 .profile-info h3 {
     color: #57839d;
-    font-size: 30px;
+    font-size: clamp(16px, 4vw, 30px);
+    text-align: center;
 }
 
 .profile-flwn {
@@ -27,18 +36,45 @@
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
+    padding: 0 15px;
 }
 
 .profile-flwn h2 {
     color: #57839d;
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: clamp(20px, 5vw, 36px);
+    margin-bottom: 15px;
     text-decoration: underline;
+    text-align: center;
 }
 
 .divider {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
-    margin-top: 10px;
+    width: 100%;
+    max-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .profile-info {
+        padding: 15px;
+    }
+
+    .divider {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-info img {
+        width: 60vw;
+        height: 60vw;
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .divider {
+        gap: 10px;
+    }
 }

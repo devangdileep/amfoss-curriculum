@@ -1,25 +1,77 @@
-.userbox-ctn {
-    height: 210px;
-    width: 200px;
-    margin-top: 50px;
+.result {
     display: flex;
-    margin-right: 50px;
-    flex-direction: column;
     align-items: center;
-    background-color: #6ca5c6;
-    box-shadow: #547b92 0px 4px 8px;
-    border-radius: 60px;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 15px;
+    border-radius: 40px;
+    background-color: #7db6d6;
+    border: 3px solid #5a89a4;
+    gap: 12px;
+    transition: transform 0.3s;
+}
+
+.result:hover {
+    transform: translateX(5px);
 }
 
 .user-profile img {
-    margin-top: 20px;
-    height: 120px;
-    width: 220px;
-    border-radius: 50%;
+    width: 300px;
+    height: 150px;
+
 }
 
-.user-info h3 {
-    font-size: 20px;
-    font-family: monospace;
+.song-icon img {
+    width: clamp(50px, 12vw, 80px);
+    height: clamp(50px, 12vw, 80px);
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.song-search-result {
+    flex: 1;
+    min-width: 0;
+}
+
+.song-search-result h2 {
+    font-size: clamp(14px, 3.5vw, 20px);
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #333;
+}
+
+.song-search-result h3 {
+    font-size: clamp(12px, 3vw, 16px);
+    margin: 0;
+    color: #555;
+}
+
+.playbutton {
+    flex-shrink: 0;
+}
+
+.playbutton img {
+    height: clamp(35px, 8vw, 60px);
+    width: clamp(35px, 8vw, 60px);
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+    .result {
+        padding: 8px 12px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .result {
+        padding: 8px 10px;
+        gap: 10px;
+        border-radius: 30px;
+    }
 }
