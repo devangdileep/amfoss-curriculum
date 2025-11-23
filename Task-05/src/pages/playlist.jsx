@@ -5,25 +5,27 @@ function Playlist() {
     return (
         <>
             <Navbar />
-            <div className="playlist-create-btn">
-                <h2>Your Playlists</h2>
-                <button>Create +</button>
-            </div>
-            <PlaylistCards />
-            <PlaylistCards />
-            <PlaylistCards />
-            <PlaylistCards />
-            <PlaylistCards />
-            <div className="playlist-recom">
-                <h2>Recommended Playlists</h2>
-            </div>
-            <PlaylistCards />
-            <PlaylistCards />
-            <PlaylistCards />
-            <PlaylistCards />
-            <PlaylistCards />
+            <div className="playlist-ctnr">
+                <div className="playlist-create-btn">
+                    <h2>Your Playlists</h2>
+                    <button>Create +</button>
+                </div>
+                <div className="playlist-data">
+                    <PlaylistCards />
+                    <PlaylistCards />
+                    <PlaylistCards />
 
-            <DynamicIsland />
+                </div>
+                <div className="playlist-recom">
+                    <h2>Recommended Playlists</h2>
+                </div>
+                <div className="playlist-data">
+                    <PlaylistCards />
+                    <PlaylistCards />
+                    <PlaylistCards />
+                </div>
+                <DynamicIsland />
+            </div>
         </>
     )
 }

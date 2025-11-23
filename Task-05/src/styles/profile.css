@@ -17,14 +17,14 @@
 }
 
 .profile-info h2 {
-    color: #57839d;
+    color: #80868d;
     font-size: clamp(24px, 6vw, 40px);
     margin: 15px 0 5px;
     text-align: center;
 }
 
 .profile-info h3 {
-    color: #57839d;
+    color: #868d94;
     font-size: clamp(16px, 4vw, 30px);
     text-align: center;
 }
@@ -40,7 +40,7 @@
 }
 
 .profile-flwn h2 {
-    color: #57839d;
+    color: #878f97;
     font-size: clamp(20px, 5vw, 36px);
     margin-bottom: 15px;
     text-decoration: underline;

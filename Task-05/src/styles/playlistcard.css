@@ -9,8 +9,8 @@
     min-width: 150px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #57839d;
-    background-color: #6ca5c6;
+    border: 2px solid #9aa3b0;
+    background-color: #BCC7D6;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -29,7 +29,7 @@
 
 .playlist-info h2 {
     text-align: center;
-    color: #333;
+    color: rgb(32, 35, 39);
     font-size: clamp(14px, 3vw, 20px);
     margin-top: 10px;
     font-family: monospace;
@@ -45,11 +45,17 @@
     padding: 0 10px;
 }
 
+.playlist-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .playlist-create-btn h2 {
     flex: 1;
     text-decoration: underline;
     font-size: clamp(20px, 5vw, 30px);
-    color: rgb(76, 130, 163);
+    color: #575c64;
     margin: 0;
 }
 
@@ -58,16 +64,16 @@
     font-family: monospace;
     padding: 12px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #6ca5c6;
+    background-color: #BCC7D6;
     font-size: clamp(14px, 3vw, 20px);
     border-radius: 30px;
-    border: 2px solid #57839d;
+    border: 2px solid #6c757d;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .playlist-create-btn button:hover {
-    background-color: #5a9ab8;
+    background-color: #53595f;
 }
 
 .playlist-recom {
@@ -78,7 +84,7 @@
 .playlist-recom h2 {
 
     text-decoration: underline;
-    color: rgb(76, 130, 163);
+    color: #3E4A5B;
     margin: 0;
 }
 

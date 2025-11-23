@@ -5,14 +5,14 @@
     transform: translateX(-50%);
     width: calc(100% - 30px);
     max-width: 700px;
-    background: #6ea9ca;
+    background: #C9D3DD;
     border-radius: 40px;
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 8px 15px;
     font-family: monospace;
-    border: #447794 4px solid;
+    border: #8996a1 4px solid;
     z-index: 1000;
 }
 
@@ -32,6 +32,7 @@
 .song-playing-dta h3 {
     font-size: clamp(12px, 3vw, 16px);
     white-space: nowrap;
+    color: #73797e;
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 0;
@@ -44,20 +45,19 @@
 }
 
 .controls button {
-    background: #b4d6ea;
-    color: #568dad;
-    border: none;
+    background: #9ca4ac;
+    color: #C9D3DD;
+    border: #C9D3DD 4px solid;
     padding: clamp(6px, 2vw, 10px) clamp(8px, 2.5vw, 15px);
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
     font-size: clamp(12px, 3vw, 16px);
-    transition: background-color 0.3s;
 }
 
 .controls button:hover {
-    background: #76b1d4;
-    border: #b4d6ea 1px dotted;
+    background: #555c62;
+    border: #5a6269 4px solid;
 }
 
 @media (max-width: 768px) {

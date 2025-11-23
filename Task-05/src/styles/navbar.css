@@ -7,8 +7,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border: #6ca5c6 4px solid;
-    background-color: #72afd2;
+    border: #8d95a1 4px solid;
+    background-color: #BCC7D6;
     border-radius: 30px;
     padding: 5px 15px;
     gap: 10px;
@@ -36,12 +36,12 @@
     padding: 10px 15px;
     border-radius: 30px;
     border: none;
-    background-color: #72afd2;
+    background-color: #BCC7D6;
     cursor: pointer;
 }
 
 .navbar-topics button:hover {
-    background-color: #6ca5c6;
+    background-color: #8c94a0;
 }
 
 .navbar-user {
