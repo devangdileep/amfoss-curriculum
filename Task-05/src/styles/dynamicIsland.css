@@ -4,7 +4,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 30px);
-    max-width: 700px;
+    max-width: 50%;
     background: #C9D3DD;
     border-radius: 40px;
     display: flex;
