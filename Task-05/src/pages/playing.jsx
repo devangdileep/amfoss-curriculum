@@ -1,46 +1,41 @@
 import Navbar from "../components/navbar";
-import DynamicIsland from "../components/dynamicisland";
 import "../styles/playing.css"
+import { usePlayer } from "../components/playercontext";
+import { useState , useEffect } from "react";
 
 function PlayingMusic() {
+    const { currentSong }  = usePlayer();
+    const[ song , nowplayingsong] = useState({
+        trackname: "Nothing Playing Right Now",
+        artist: "Please Select A Song",
+        photo: ""
+    })
+    useEffect(() => {
+        if (currentSong) {
+            nowplayingsong({
+                trackname: currentSong.trackName,
+                artist: currentSong.artistName,
+                photo: currentSong.artworkUrl100.replace("100x100bb", "600x600bb"),
+            });
+        }
+    }, [currentSong]);
     return (
 
-        <>
+        <>  
             <Navbar />
             <div className="playing-song">
-                <h2 >Now Playing</h2>
+                <h2>Now Playing</h2>
                 <div className="song-title-card">
-                    <img src="/src/assets/playing.jpg" />
-                </div>
-                <h2 className="song-title">Song Title - Artist Name</h2>
-                <div className="controls-playing">
-                    <button > ⏮ </button>
-                    <button > ▶ </button>
-                    <button > ⏭ </button>
-                </div>
-                <h2>Lyrics</h2>
-                <div className="lyrics-playing">
-                    <h3>
-                        Lorem ipsum dolor sit amet,<br></br>
-                        consectetur adipiscing elit.<br></br>
-                        Sed do eiusmod tempor incididunt<br></br>
-                        ut labore et dolore magna aliqua.<br></br>
-                        Ut enim ad minim veniam,<br></br>
-                        quis nostrud exercitation ullamco<br></br>
-                        laboris nisi ut aliquip ex ea<br></br>
-                        commodo consequat.<br></br>
-                        Duis aute irure dolor in reprehenderit<br></br>
-                        in voluptate velit esse cillum dolore<br></br>
-                        eu fugiat nulla pariatur.<br></br>
-                        Excepteur sint occaecat cupidatat non<br></br>
-                        proident, sunt in culpa qui officia<br></br>
-                        deserunt mollit anim id est laborum.<br></br>
-                    </h3>
+                    <img src={song.photo} />
                 </div>
             </div>
-            <DynamicIsland />
+            <div className="song-detials">
+                <h2>🎶 {song.trackname}</h2>
+                <h2>Artist : {song.artist}</h2>
+            </div>
         </>
     )
 }
 
 export default PlayingMusic;
+
