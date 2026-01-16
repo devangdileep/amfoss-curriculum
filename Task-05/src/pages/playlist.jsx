@@ -1,7 +1,15 @@
-import DynamicIsland from "../components/dynamicisland";
-import Navbar from "../components/navbar";
-import PlaylistCards from "../components/playlistcards";
+import { usePlayer } from "../components/playercontext"
+import Navbar from "../components/navbar"
+import PlaylistCards from "../components/playlistcards"
+import SongCards from "../components/songcard"
+
 function Playlist() {
+    const { setCurrentSong } = usePlayer();
+
+    const handleSongSelect = (song) => {
+        setCurrentSong(song)
+  };
+
     return (
         <>
             <Navbar />
@@ -14,19 +22,16 @@ function Playlist() {
                     <PlaylistCards />
                     <PlaylistCards />
                     <PlaylistCards />
-
                 </div>
                 <div className="playlist-recom">
-                    <h2>Recommended Playlists</h2>
+                    <h2>Recommended Songs</h2>
                 </div>
                 <div className="playlist-data">
-                    <PlaylistCards />
-                    <PlaylistCards />
-                    <PlaylistCards />
+                    <SongCards onSongSelect={handleSongSelect} />
                 </div>
-                <DynamicIsland />
             </div>
         </>
     )
 }
+
 export default Playlist;

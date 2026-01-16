@@ -25,15 +25,6 @@
     outline: none;
 }
 
-
-.fetch-artist {
-    margin-top: 5px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0 5px;
-}
-
 .song-search {
 
     display: flex;
@@ -46,7 +37,8 @@
 
 .song-search h2 {
     font-size: clamp(20px, 5vw, 28px);
-    color: rgb(86, 97, 104);
+    color: rgb(59, 66, 71);
+    text-decoration: none;
     margin-bottom: 15px;
 }
 
@@ -66,10 +58,6 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .fetch-artist {
-        gap: 10px;
-    }
-
     .song-search {
         margin-top: 20px;
     }

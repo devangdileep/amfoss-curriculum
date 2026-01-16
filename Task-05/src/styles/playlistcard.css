@@ -5,8 +5,8 @@
     height: auto;
     border-radius: 20px;
     width: calc(50% - 40px);
-    max-width: 280px;
-    min-width: 150px;
+    max-width: 220px;
+    min-width: 120px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid #9aa3b0;
@@ -30,11 +30,30 @@
 .playlist-info h2 {
     text-align: center;
     color: rgb(32, 35, 39);
-    font-size: clamp(14px, 3vw, 20px);
+    font-size: clamp(14px, 3vw, 18px);
     margin-top: 10px;
     font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    text-decoration: none;
+    width: 100%;
 }
 
+.playlist-info h3 {
+    text-align: center;
+    color: #575c64;
+    font-size: clamp(11px, 4vw, 14px);
+    margin-top: 4px;
+    font-family: Jetbrains Mono;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
+}
 .playlist-create-btn {
     display: flex;
     justify-content: space-between;
