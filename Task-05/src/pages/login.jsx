@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import '../styles/login.css';
 import { useState } from 'react';
+import { usePlayer } from '../components/playercontext';
 
 function Login() {
     const [userName, setUserName] = useState("");
     const [userPass, setUserPass] = useState("");
     const [serverResp, setServerResp] = useState("");
-    
+    const {CurrentUser} = usePlayer();    
     const navigate = useNavigate();
 
     const sendToBackend = async (e) => {
@@ -25,6 +26,7 @@ function Login() {
             const data = await response.json();
 
             if (data.status === "success") {
+                CurrentUser(userName)
                 navigate('/playlist');
             } else {
                 setServerResp(data.message || "Login Failed");
