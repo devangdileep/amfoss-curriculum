@@ -3,81 +3,118 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .login-logo img {
-    height: 300px;
-    width: 300px;
-    padding-top: 10px;
+    height: clamp(150px, 30vw, 300px);
+    width: clamp(150px, 30vw, 300px);
+    object-fit: contain;
 }
 
 h3 {
-    font-family: jetbrains-mono, monospace;
-    font-size: 20px;
+    font-family: monospace;
+    font-size: clamp(14px, 3vw, 20px);
     color: #666;
+    text-align: center;
 }
 
 h1 {
-    display: flex;
-    margin: 0%;
-    font-family: jetbrains-mono, monospace;
-    font-size: 80px;
+    margin: 0;
+    font-family: monospace;
+    font-size: clamp(40px, 10vw, 80px);
     color: #333;
+    text-align: center;
 }
 
 h2 {
-    font-family: jetbrains-mono, monospace;
+    font-family: monospace;
     color: #555;
+    font-size: clamp(18px, 4vw, 28px);
+    text-align: center;
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 400px;
 }
 
 .login-form input {
-    font-family: jetbrains-mono, monospace;
-    font-size: 20px;
-    padding: 15px;
-    margin: 10px;
+    font-family: monospace;
+    font-size: clamp(14px, 3vw, 20px);
+    padding: 12px 15px;
+    margin: 8px 0;
     border: 2px solid #6ca5c6;
     border-radius: 50px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .login-form button {
-    font-family: jetbrains-mono, monospace;
-    font-size: 20px;
-    padding: 10px 20px;
+    font-family: monospace;
+    font-size: clamp(16px, 3vw, 20px);
+    padding: 10px 25px;
     margin: 10px;
     border: none;
     border-radius: 30px;
     background-color: #6ca5c6;
     color: #b9e3fc;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #5a9ab8;
 }
 
 .login-signup {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 50px;
+    padding-bottom: 30px;
 }
 
 .login-signup button {
-    font-family: jetbrains-mono, monospace;
-    font-size: 18px;
+    font-family: monospace;
+    font-size: clamp(14px, 3vw, 18px);
     padding: 10px 20px;
     border: none;
     border-radius: 30px;
     background-color: #6ca5c6;
-    text-decoration: none;
-    color: #b9e3fc;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-signup button:hover {
+    background-color: #5a9ab8;
 }
 
 .login-signup button a {
     text-decoration: none;
     color: #b9e3fc;
+}
+
+@media (max-width: 768px) {
+    .login-signup {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .login-form input {
+        padding: 10px 12px;
+    }
+
+    .login-signup {
+        margin-top: 20px;
+    }
 }

@@ -1,35 +1,75 @@
 .search-bar-ctn {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-family: monospace;
+    padding: 0 10px;
+    margin-bottom: 20px;
 }
 
 .search-box {
-    width: 30%;
+    width: 100%;
+    max-width: 600px;
 }
 
 .search-box input {
     width: 100%;
-    background-color: #7db6d6;
+    background-color: #C9D3DD;
     text-align: center;
     font-family: monospace;
-    height: 30px;
-    border: 5px solid #67a7cd;
-    padding: 8px;
+    height: auto;
+    border: 4px solid #8f98a0;
+    padding: 12px 20px;
     border-radius: 50px;
-    font-size: 16px;
-}
-
-.fetch-artist {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+    font-size: clamp(14px, 3vw, 18px);
+    outline: none;
 }
 
 .song-search {
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 50px;
+    padding: 0 15px;
+    padding-bottom: 10px;
+}
+
+.song-search h2 {
+    font-size: clamp(20px, 5vw, 28px);
+    color: rgb(59, 66, 71);
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: clamp(20px, 5vw, 28px);
+    color: #5c6670;
+    text-decoration: underline;
+    font-family: monospace;
+    margin-bottom: 15px;
+}
+
+.song-search-ctn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 650px;
+}
+
+@media (max-width: 768px) {
+    .song-search {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .search-box input {
+        padding: 10px 15px;
+    }
+
+    .fetch-artist {
+        gap: 5px;
+    }
 }

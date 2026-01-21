@@ -1,5 +1,4 @@
 import Navbar from "../components/navbar";
-import FolwnArtist from "../components/folwnartist";
 import "../styles/profile.css";
 import DynamicIsland from "../components/dynamicisland";
 
@@ -13,14 +12,6 @@ function Profile() {
                     <img src="src/assets/user-icon-tst.png" alt="" />
                     <h2>Username</h2>
                     <h3>Email</h3>
-                </div>
-                <div className="profile-flwn">
-                    <h2>Followed Artists</h2>
-                    <div className="divider">
-                        <FolwnArtist />
-                        <FolwnArtist />
-                        <FolwnArtist />
-                    </div>
                 </div>
             </div>
             <DynamicIsland />

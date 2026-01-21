@@ -1,65 +1,133 @@
 .playlistcards-container {
-    margin: 30px;
+    margin: 15px;
     display: inline-block;
-    gap: 30px;
-    height: 250px;
-    border-radius: 30px;
-    width: 250px;
-    padding: 30px;
+    vertical-align: top;
+    height: auto;
+    border-radius: 20px;
+    width: calc(50% - 40px);
+    max-width: 220px;
+    min-width: 120px;
+    padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #57839d;
-    background-color: #6ca5c6;
+    border: 2px solid #9aa3b0;
+    background-color: #BCC7D6;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.playlistcards-container:hover {
+    transform: translateY(-20px);
 }
 
 .playlist-image img {
-    width: 248px;
-    height: 200px;
-    padding: 1px;
-    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .playlist-info h2 {
-    justify-content: center;
     text-align: center;
-    color: #333;
-    font-size: 20px;
+    color: rgb(32, 35, 39);
+    font-size: clamp(14px, 3vw, 18px);
+    margin-top: 10px;
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    text-decoration: none;
+    width: 100%;
 }
 
+.playlist-info h3 {
+    text-align: center;
+    color: #575c64;
+    font-size: clamp(11px, 4vw, 14px);
+    margin-top: 4px;
+    font-family: Jetbrains Mono;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
+}
 .playlist-create-btn {
     display: flex;
     justify-content: space-between;
-    margin-right: 40px;
-    margin-left: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 20px 20px;
+    padding: 0 10px;
+}
+
+.playlist-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .playlist-create-btn h2 {
+    flex: 1;
     text-decoration: underline;
-    font-size: 30px;
-    color: rgb(76, 130, 163);
+    font-size: clamp(20px, 5vw, 30px);
+    color: #575c64;
+    margin: 0;
 }
 
 .playlist-create-btn button {
-    height: 60px;
+    height: auto;
     font-family: monospace;
-    width: 120px;
+    padding: 12px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #6ca5c6;
-    font-size: 20px;
-    border-radius: 40px;
-
+    background-color: #BCC7D6;
+    font-size: clamp(14px, 3vw, 20px);
+    border-radius: 30px;
+    border: 2px solid #6c757d;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .playlist-create-btn button:hover {
-    cursor: pointer;
+    background-color: #53595f;
+}
+
+.playlist-recom {
+    margin: 30px 20px 10px;
+    padding: 0 10px;
 }
 
 .playlist-recom h2 {
-    display: flex;
-    font-size: 30px;
+
     text-decoration: underline;
-    margin-left: 20px;
-    color: rgb(76, 130, 163);
-    margin-top: 50px;
-    margin-bottom: 20px;
+    color: #3E4A5B;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .playlistcards-container {
+        width: calc(50% - 30px);
+        margin: 10px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .playlistcards-container {
+        width: calc(100% - 30px);
+        max-width: none;
+        margin: 10px 15px;
+    }
+
+    .playlist-create-btn {
+        margin: 0 15px 15px;
+        padding: 0;
+    }
+
+    .playlist-recom {
+        margin: 20px 15px 10px;
+    }
 }

@@ -1,37 +1,63 @@
 .result {
     display: flex;
-    height: 100px;
-    width: 600px;
-    border-radius: 50px;
-    background-color: #7db6d6;
-    flex-direction: row;
-    border: 3px solid #5a89a4;
-
+    align-items: center;
+    width: 100%;
+    margin-bottom: 13px;
+    max-width: 600px;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 40px;
+    background-color: #C9D3DD;
+    border: 5px solid #8c959e;
+    gap: 15px;
 }
 
 .song-icon img {
-    margin-right: 30px;
-    margin-top: 0%;
-    margin-bottom: 20%;
-    width: 100px;
-    height: 100px;
+    width: clamp(50px, 12vw, 80px);
+    height: clamp(50px, 12vw, 80px);
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.song-result-search h2 {
-    margin: 0px;
-    margin-left: 20px;
-    margin-top: 5px;
-    font-size: 24px;
+.song-search-result {
+    flex: 1;
+    min-width: 0;
 }
 
-.song-result-search h3 {
-    margin-left: 20px;
-    font-size: 18px;
+.song-search-result h2 {
+    font-size: clamp(14px, 3.5vw, 20px);
+    white-space: nowrap;
+    text-decoration: none;
+    color: #333;
 }
+
+.song-search-result h3 {
+    font-size: clamp(12px, 3vw, 16px);
+    margin: 0;
+    text-decoration: none;
+    color: #555;
+}
+
 
 .playbutton img {
-    height: 60px;
-    margin-top: 20px;
-    margin-left: 250px;
+    height: clamp(35px, 8vw, 60px);
+    width: clamp(35px, 8vw, 60px);
+    cursor: pointer;
+}
 
+
+
+@media (max-width: 768px) {
+    .result {
+        padding: 8px 12px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .result {
+        padding: 8px 10px;
+        gap: 10px;
+        border-radius: 30px;
+    }
 }
