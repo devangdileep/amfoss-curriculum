@@ -14,10 +14,19 @@ cur = mydb.cursor()
 
 cur.execute("show tables;")
 tables_data = cur.fetchall()
+
 table_exist = False
+user_playlist_table_exist = False
+user_playlist_song_table_exist = False
 for i in tables_data:
     if "USER_AUTH" in i[0]:
         table_exist = True
+for i in tables_data:
+    if "USER_PLAYLISTS" in i[0]:
+        user_playlist_table_exist = True
+for i in tables_data:
+    if "USER_PLAYLIST_SONG" in i[0]:
+        user_playlist_song_table_exist = True
 
 if table_exist:
     print("Table Already Exist !")
@@ -26,6 +35,19 @@ else:
     cur.execute(table_ini)
     print("Table Created Sucessfully")
 
+if user_playlist_table_exist:
+    print("Table Already Exist !")
+else:
+    table_ini = "create table USER_PLAYLISTS (id int not null AUTO_INCREMENT primary key, username varchar(255), playlist_name varchar(255));"
+    cur.execute(table_ini)
+    print("Playlist Table Created Sucessfully")
+
+if user_playlist_song_table_exist:
+    print("Table Already Exist !")
+else:
+    table_ini = "create table USER_PLAYLIST_SONG (id int(11) not null auto_increment primary key, username varchar(255) default null, playlist_name varchar(255) default null, song_title varchar(255) default null, song_artist varchar(255) default null, song_audio varchar(500) default null, song_cover varchar(500) default null);"
+    cur.execute(table_ini)
+    print("Playlist Song table created sucessfully !")
 
 
 @app.route('/auth/login', methods=['POST' , 'GET'])
