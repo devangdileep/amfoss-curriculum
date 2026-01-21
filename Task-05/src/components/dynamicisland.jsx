@@ -4,8 +4,10 @@ import "../styles/dynamicIsland.css";
 import { usePlayer } from "../components/playercontext";
 
 function DynamicIsland() {
-    const { currentSong } = usePlayer();
+    const { currentSong, user } = usePlayer();
     const [isPlaying, setIsPlaying] = useState(false);
+    const [playlists, setPlaylists] = useState([]);
+    const [selectedPlaylist, setSelectedPlaylist] = useState("");    
     const [song, setSong] = useState({
         title: "No song playing",
         artist: "",
@@ -13,7 +15,29 @@ function DynamicIsland() {
         audio: "",
     });
     const audioRef = useRef(null);
-
+    useEffect(() => {
+        if (user) {
+        fetch(`http://localhost:5000/playlists/${user}`)
+            .then(res => res.json())
+            .then(data => setPlaylists(data));
+        }
+    }, [user]);
+    const addToPlaylist = async (playlistName) => {
+        if (!playlistName) return;
+        await fetch("http://localhost:5000/playlists/addsong", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+        username: user,
+        playlist_name: playlistName,
+        title: song.title,
+        artist: song.artist,
+        audio: song.audio,
+        cover: song.cover
+        })
+    });
+    setSelectedPlaylist("");
+    };
     useEffect(() => {
         if (currentSong) {
         setSong({
@@ -25,7 +49,6 @@ function DynamicIsland() {
         setIsPlaying(true);
         }
     }, [currentSong]);
-
     useEffect(() => {
         if (audioRef.current && song.audio) {
         if (isPlaying) {
@@ -37,7 +60,6 @@ function DynamicIsland() {
         }
         }
     }, [song.audio, isPlaying]);
-
     if (!currentSong) {
         return null;
     }
@@ -58,6 +80,21 @@ function DynamicIsland() {
         <div className="song-playing-dta">
             <h3>{song.title}</h3>
             <p>{song.artist}</p>
+        </div>
+        <div className="playlist-dropdown">
+        <select 
+            value={selectedPlaylist}
+            onChange={(e)=>{
+            setSelectedPlaylist(e.target.value);
+            addToPlaylist(e.target.value);
+            }}>
+            <option value="">Add to playlist</option>
+            {playlists.map(pl => (
+            <option key={pl.id} value={pl.playlist_name}>
+                {pl.playlist_name}
+            </option>
+            ))}
+        </select>
         </div>
         <div className="controls">
             {song.audio && (

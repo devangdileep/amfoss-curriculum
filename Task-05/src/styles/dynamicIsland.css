@@ -60,6 +60,14 @@
     border: #5a6269 4px solid;
 }
 
+.playlist-dropdown select {
+  border-radius: 20px;
+  padding: 4px 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
 @media (max-width: 768px) {
     .dynamic-island-bar {
         padding: 6px 12px;

@@ -97,6 +97,66 @@ def register():
         mydb.rollback()
         return jsonify({"status": "error", "message": str(e)}), 500
 
+@app.route('/playlists/<username>', methods=['GET'])
+def get_playlists(username):
+    try:
+        query = "select id, playlist_name FROM USER_PLAYLISTS where username = %s"
+        cur.execute(query, (username,))
+        data = cur.fetchall()
+        playlists = []
+        for row in data:
+            playlists.append({
+                "id": row[0],
+                "playlist_name": row[1]
+            })
+        return jsonify(playlists), 200
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/playlists/create', methods=['POST'])
+def create_playlist():
+    data = request.json
+    username = data.get('username')
+    playlist_name = data.get('playlist_name')
+    if not username or not playlist_name:
+        return jsonify({"error": "Missing fields"}), 400
+    try:
+        insert_query = "insert into USER_PLAYLISTS (username, playlist_name) values (%s, %s)"
+        cur.execute(insert_query, (username, playlist_name))
+        mydb.commit()
+        return jsonify({"message": "Playlist created"}), 201
+    except Exception as e:
+        mydb.rollback()
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/playlists/addsong', methods=['POST'])
+def add_song_to_playlist():
+    data = request.json
+    username = data.get('username')
+    playlist = data.get('playlist_name')
+    title = data.get('title')
+    artist = data.get('artist')
+    audio = data.get('audio')
+    query = "insert into USER_PLAYLIST_SONG (username, playlist_name, song_title, song_artist, song_audio, song_cover) values (%s,%s,%s,%s,%s,%s)"
+    cur.execute(query,(username,playlist,title,artist,audio,data.get('cover')))
+    mydb.commit()
+    return jsonify({"message":"Song added"}), 200
+
+@app.route('/playlists/songs/<username>/<playlist>', methods=['GET'])
+def get_playlist_songs(username, playlist):
+    query = "select song_title, song_artist, song_audio, song_cover from USER_PLAYLIST_SONG where username=%s AND playlist_name=%s"
+    cur.execute(query, (username, playlist))
+    data = cur.fetchall()
+    songs = []
+    for row in data:
+        songs.append({
+            "title": row[0],
+            "artist": row[1],
+            "audio": row[2],
+            "cover": row[3]
+            })
+    return jsonify(songs), 200
 
 if __name__ == "__main__":
     app.run(debug=True)

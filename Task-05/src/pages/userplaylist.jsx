@@ -1,36 +1,53 @@
-import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react"
-import Navbar from "../components/navbar"
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Navbar from "../components/navbar";
+import { usePlayer } from "../components/playercontext";
+import "../styles/userplaylist.css"
 
 function UserPlaylist() {
-    const { id } = useParams();
-    const [songs, setSongs] = useState([]);
+  const { playlistName } = useParams();
+  const { user, setCurrentSong } = usePlayer();
+  const [songs, setSongs] = useState([]);
 
-    useEffect(() => {
-        fetch(`http://127.0.0.1:5000/api/get-playlist-songs?id=${id}`)
-            .then(res => res.json())
-            .then(ids => {
-                if (ids.length > 0) {
-                    fetch(`https://itunes.apple.com/lookup?id=${ids.join(',')}`)
-                        .then(res => res.json())
-                        .then(data => setSongs(data.results));
+  useEffect(() => {
+    fetch(`http://localhost:5000/playlists/songs/${user}/${playlistName}`)
+      .then((res) => res.json())
+      .then((data) => setSongs(data));
+  }, [playlistName, user]);
+
+  return (
+    <>
+    <Navbar />
+    <h2 className="playlist-title-hed">{playlistName}</h2>
+    <div className="user-playlist">
+        <div className="search-results-list">
+            {songs.map((song, index) => (
+            <div
+                className="result"
+                key={index}
+                onClick={() =>
+                setCurrentSong({
+                    trackName: song.title,
+                    artistName: song.artist,
+                    artworkUrl100: song.cover,
+                    previewUrl: song.audio,
+                })
                 }
-            });
-    }, [id]);
-
-    return (
-        <>
-            <Navbar />
-            <div className="playlist-fetch">
-                {songs.map(song => (
-                    <div key={song.trackId} className="song-details">
-                        <img src={song.artworkUrl60} alt="" />
-                        <h3>{song.trackName}</h3>
-                    </div>
-                ))}
+                style={{ cursor: "pointer" }}
+            >
+                <div className="song-icon">
+                <img src={song.cover} alt={song.title} />
+                </div>
+                <div className="song-search-result">
+                <h2>{song.title}</h2>
+                <h3>{song.artist}</h3>
+                </div>
             </div>
-        </>
-    )
+            ))}
+        </div>
+    </div>
+    </>
+  );
 }
 
 export default UserPlaylist;

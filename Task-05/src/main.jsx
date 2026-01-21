@@ -11,7 +11,7 @@ import PlayingMusic from './pages/playing.jsx'
 import { Outlet } from 'react-router-dom'
 import { PlayerProvider } from '../src/components/playercontext.jsx'
 import DynamicIsland from './components/dynamicisland.jsx'
-
+import UserPlaylist from './pages/userplaylist.jsx'
 const AppLayout = () => (
   <>
     <Outlet /> 
@@ -29,6 +29,7 @@ const router = createBrowserRouter([
       { path: '/search', element: <Search /> },
       { path: '/profile', element: <Profile /> },
       { path: '/playing', element: <PlayingMusic /> },
+      { path: "/userplaylist/:playlistName" ,element: <UserPlaylist /> },
     ],
   },
 ])
