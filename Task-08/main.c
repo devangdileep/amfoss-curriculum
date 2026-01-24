@@ -64,7 +64,7 @@ int main() {
         }
 
         int background = 0;
-        if((i > 0 && strcmp(args[sizeof(args) -1] ,"&")) == 0 ){
+        if(i > 0 && strcmp(args[i-1], "&") == 0 ){
             background = 1;
             args[i-1] = NULL;
         } else {
