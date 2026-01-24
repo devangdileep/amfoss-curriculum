@@ -16,11 +16,15 @@ function DynamicIsland() {
     });
     const audioRef = useRef(null);
     useEffect(() => {
-        if (user) {
+        if (!user) return;
+        const fetchPlaylist = () => {
         fetch(`http://localhost:5000/playlists/${user}`)
             .then(res => res.json())
             .then(data => setPlaylists(data));
-        }
+        };
+        fetchPlaylist();
+        const intv = setInterval(fetchPlaylist,2000);
+        return () => clearInterval(intv)
     }, [user]);
     const addToPlaylist = async (playlistName) => {
         if (!playlistName) return;
