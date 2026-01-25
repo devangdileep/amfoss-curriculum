@@ -9,6 +9,19 @@
 pid_t bg_pids[100]; 
 int bg_count = 0;
 
+void handle_sigchld(int sig) {
+    pid_t pid;
+    while ((pid = waitpid(-1, NULL, WNOHANG)) > 0) {
+        for (int i = 0; i < bg_count; i++) {
+            if (bg_pids[i] == pid) {
+                bg_pids[i] = 0; 
+                break;
+            }
+        }
+    }
+}
+
+
 void handle_sigint(int sig) {
     if(bg_count == 0){
         printf("None");
@@ -34,6 +47,8 @@ int main() {
 
     signal(SIGTSTP, handle_sigtstp);
     signal(SIGINT, handle_sigint);
+    signal(SIGCHLD, handle_sigchld);
+
     while (1) {
         
         printf("unix-shell > "); 
