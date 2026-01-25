@@ -7,6 +7,7 @@
 
 
 pid_t bg_pids[100]; 
+pid_t fg_pid = -1;
 int bg_count = 0;
 
 void handle_sigchld(int sig) {
@@ -36,14 +37,15 @@ void handle_sigint(int sig) {
 }
 
 void handle_sigtstp(int signum){
-    printf("\n");
-    printf("unix-shell > ");
-    fflush(stdout);
+    if (fg_pid > 0) {
+        kill(fg_pid, SIGKILL);  
+    }
 }
 
 int main() {
     char input[100];
     char *args[10];
+    
 
     signal(SIGTSTP, handle_sigtstp);
     signal(SIGINT, handle_sigint);
@@ -120,7 +122,9 @@ int main() {
                 bg_count++;
                 printf("Background process started with PID : %d\n", parll_procc);
             } else {
+                fg_pid = parll_procc;
                 waitpid(parll_procc, NULL, 0);
+                fg_pid = -1;  
             }          
 
         }
