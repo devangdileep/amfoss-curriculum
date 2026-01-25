@@ -56,28 +56,25 @@ def login():
     username = data.get('username')
     password = data.get('password')
     
-    auth_table_query = 'select * from USER_AUTH;'
-    cur.execute(auth_table_query)
-    auth_table_data = cur.fetchall()
+    auth_table_query = 'select user_id, hashed_password from USER_AUTH where user_id = %s;'
+    cur.execute(auth_table_query, (username,))
+    user_exist = cur.fetchone()
 
-    for i in auth_table_data:
-        if username.lower() == i[1] and bcrypt.checkpw(password.encode('utf-8'),i[3].encode('utf-8')):
-            user_Found_Auth = True
-            return jsonify({
+    if not user_exist:
+        return jsonify({
+            "status": "error",
+            "message": "User Not Found"
+        }), 401
+    db_username, password_hash = user_exist
+    if bcrypt.checkpw(password.encode('utf-8'), password_hash.encode('utf-8')):
+        return jsonify({
             "status": "success",
-            "message": "Login successful!"
+            "message": "Login successful"
         }), 200
-
-        elif username.lower() == i[1] or bcrypt.checkpw(password.encode('utf-8'),i[3].encode('utf-8')):
-            return jsonify({
-                "status": "error",
-                "message": "Invalid username or password"
-            }), 401
-        else:
-            return jsonify({
-                "status": "error",
-                "message": "User Does Not Exist"
-            }), 401
+    return jsonify({
+        "status": "error",
+        "message": "Invalid username or password"
+    }), 401
 
 @app.route('/auth/register', methods=['POST'])
 def register():
