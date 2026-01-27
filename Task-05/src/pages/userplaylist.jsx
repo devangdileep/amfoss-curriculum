@@ -14,6 +14,21 @@ function UserPlaylist() {
       .then((res) => res.json())
       .then((data) => setSongs(data));
   }, [playlistName, user]);
+  const deleteSong = (songTitle) => {
+    fetch("http://localhost:5000/playlists/delete-song", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: user,
+        playlist_name: playlistName,
+        title: songTitle,
+      }),
+    })
+    .then(() => {
+      const remainingSongs = songs.filter(s => s.title !== songTitle);
+      setSongs(remainingSongs);
+    });
+  };
 
   return (
     <>
@@ -42,6 +57,10 @@ function UserPlaylist() {
                 <h2>{song.title}</h2>
                 <h3>{song.artist}</h3>
                 </div>
+
+                <button className="delete-btn" onClick={(e) => {deleteSong(song.title)}}>
+                  Delete
+                </button>
             </div>
             ))}
         </div>

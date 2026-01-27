@@ -23,6 +23,18 @@
 }
 
 .result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 60%;          
   max-width: 700px;    
+}
+
+.delete-btn {
+  background-color: #4e7277;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 35px;
+  cursor: pointer;
 }

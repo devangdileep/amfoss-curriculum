@@ -177,5 +177,17 @@ def get_playlist_songs(username, playlist):
             })
     return jsonify(songs), 200
 
+@app.route('/playlists/delete-song', methods=['POST'])
+def delete_song():
+    data = request.json
+    username = data.get('username')
+    playlist = data.get('playlist_name')
+    title = data.get('title')
+    query = "delete from USER_PLAYLIST_SONG where username=%s AND playlist_name=%s AND song_title=%s"
+    cur.execute(query, (username, playlist, title))        
+    return jsonify({"status": "success",
+    "message": "Song deleted"
+    }), 20
+
 if __name__ == "__main__":
     app.run(debug=True)
