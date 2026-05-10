@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/amfoss/amfoss.github.io/master/static/img/amfoss_logo.png" width="140" alt="amFOSS Logo"/>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoIieO9F5UHmcvyp3dtdPiR7fGB8oyManeg&s" width="140" alt="amFOSS Logo"/>
 
 ### My solutions, learnings, and progress through the amFOSS curriculum.
 
